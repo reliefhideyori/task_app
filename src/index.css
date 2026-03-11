@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  overscroll-behavior: none;
+}
+
+/* スクロールバーを非表示（フィルタータブ） */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 録音ボタンのアニメーション */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.3);
+  animation: pulse-ring 1.5s ease-out infinite;
+}
