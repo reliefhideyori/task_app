@@ -1,4 +1,4 @@
-const GEMINI_MODEL = 'gemini-1.5-flash'
+const GEMINI_MODEL = 'gemini-2.5-flash-preview-04-17'
 
 export const structureTaskWithGemini = async (transcript, categories) => {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY
